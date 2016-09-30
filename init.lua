@@ -1,3 +1,5 @@
+print('...Loading [minetest-gameplay-changes]')
+
 function default.can_grow(pos)
   local node_under = minetest.get_node_or_nil({x = pos.x, y = pos.y - 1, z = pos.z})
 	if not node_under then
@@ -75,3 +77,5 @@ minetest.override_item("default:junglesapling", {on_place = nil, on_timer = defa
 minetest.override_item("default:pine_sapling", {on_place = nil, on_timer = default.grow_sapling})
 
 minetest.override_item("default:acacia_sapling", {on_place = nil, on_timer = default.grow_sapling})
+
+print('[minetest-gameplay-changes] Loaded :D')
