@@ -35,7 +35,7 @@ function default.grow_sapling(pos)
 		minetest.log("action", "A sapling grows into a tree at "..
 			minetest.pos_to_string(pos))
 		if mg_name == "v6" then
-			default.grow_tree(pos, random(1, 4) == 1)
+			default.grow_tree(pos, math.random(1, 4) == 1)
 		else
 			default.grow_new_apple_tree(pos)
 		end
