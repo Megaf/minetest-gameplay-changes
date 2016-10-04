@@ -78,4 +78,4 @@ minetest.override_item("default:pine_sapling", {on_place = nil, on_timer = defau
 
 minetest.override_item("default:acacia_sapling", {on_place = nil, on_timer = default.grow_sapling})
 
-print('[minetest-gameplay-changes] Loaded :D')
+print('[minetest-gameplay-changes] loaded.')
