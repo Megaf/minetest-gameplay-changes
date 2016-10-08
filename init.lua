@@ -78,4 +78,18 @@ minetest.override_item("default:pine_sapling", {on_place = nil, on_timer = defau
 
 minetest.override_item("default:acacia_sapling", {on_place = nil, on_timer = default.grow_sapling})
 
+-- replace snow textures
+minetest.override_item("default:dirt_with_snow", {
+	tiles = {"default_snow.png", "default_dirt.png",
+		{name = "default_dirt.png^default_snow_side.png",
+			tileable_vertical = false}},
+})
+
+minetest.override_item("default:snow", {
+	tiles = {"default_snow.png"},
+})
+
+minetest.override_item("default:snowblock", {
+	tiles = {"default_snow.png"},
+})
 print('[minetest-gameplay-changes] loaded.')
