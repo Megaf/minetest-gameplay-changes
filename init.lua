@@ -1,3 +1,6 @@
+-- All credits go to TenPlus1. He is the author of the code.
+
+
 print('...Loading [minetest-gameplay-changes]')
 
 function default.can_grow(pos)
