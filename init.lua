@@ -1,14 +1,11 @@
---Thanks to tenplus1 and IhrFussel for the help.
+--Thanks to tenplus1, IhrFussel and rubenwardy for the help.
 
 
 print('...Loading [minetest-gameplay-changes]')
 
---Sneak fixer
+-- Sneak fixer
 function register_on_joinplayer()
-  local override_table = player:get_physics_override()
-        override_table.new_move = false
-        override_table.sneak_glitch = true
-        player:set_physics_override(override_table)
+  player:set_physics_override({ new_move = false,  sneak_glitch = true })
 end
 
 -- Saplings stuff
