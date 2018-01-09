@@ -1,8 +1,17 @@
--- All credits go to TenPlus1. He is the author of the code.
+--Thanks to tenplus1 and IhrFussel for the help.
 
 
 print('...Loading [minetest-gameplay-changes]')
 
+--Sneak fixer
+function register_on_joinplayer()
+  local override_table = player:get_physics_override()
+        override_table.new_move = false
+        override_table.sneak_glitch = true
+        player:set_physics_override(override_table)
+end
+
+-- Saplings stuff
 function default.can_grow(pos)
   local node_under = minetest.get_node_or_nil({x = pos.x, y = pos.y - 1, z = pos.z})
 	if not node_under then
@@ -74,11 +83,8 @@ end
 
 
 minetest.override_item("default:sapling", {on_place = nil, on_timer = default.grow_sapling})
-
 minetest.override_item("default:junglesapling", {on_place = nil, on_timer = default.grow_sapling})
-
 minetest.override_item("default:pine_sapling", {on_place = nil, on_timer = default.grow_sapling})
-
 minetest.override_item("default:acacia_sapling", {on_place = nil, on_timer = default.grow_sapling})
 
 -- replace snow textures
@@ -95,4 +101,6 @@ minetest.override_item("default:snow", {
 minetest.override_item("default:snowblock", {
 	tiles = {"default_snow.png"},
 })
+
+
 print('[minetest-gameplay-changes] loaded.')
