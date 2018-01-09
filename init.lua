@@ -4,9 +4,9 @@
 print('...Loading [minetest-gameplay-changes]')
 
 -- Sneak fixer
-function register_on_joinplayer()
+minetest.register_on_joinplayer(function(player)
   player:set_physics_override({ new_move = false,  sneak_glitch = true })
-end
+end)
 
 -- Saplings stuff
 function default.can_grow(pos)
